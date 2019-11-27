@@ -199,7 +199,27 @@ public class FrmCliente extends JFrame {
 				cli.setCEPCliente(txtCEP.getText());
 				int[] dataFormatada = Util.formatarDataDeGuiParaLocalDate(txtNascimento.getText());
 				cli.setNascimentoCliente(LocalDate.of(dataFormatada[2], dataFormatada[1], dataFormatada[0]));
+				Cliente c = new Cliente();
+				c.setCodCliente(cli.getCodCliente());
+				c = cc.pesquisarPorCod(c.getCodCliente());
+				if(c != null) {
+					txtCodigo.setText(c.getCodCliente());
+					txtNome.setText(c.getNomeCliente());
+					txtRG.setText(c.getRgCliente());
+					txtEndereco.setText(c.getEnderecoCliente());
+					txtBairro.setText(c.getBairroCliente());
+					txtCidade.setText(c.getCidadeCliente());
+					txtEstado.setText(c.getEstadoCliente());
+					txtCEP.setText(c.getCEPCliente());
+					LocalDate nascimento = c.getNascimentoCliente();
+					String nascimento2;
+					nascimento2 = Util.formatarDataDeLocalDateParaGui(nascimento);
+					txtNascimento.setText(nascimento2);
+					JOptionPane.showMessageDialog(null, "Cliente com este código já existente");
+				}
+				else {
 				lblMensagem.setText(cc.inserir(cli));
+				}
 			}
 		});
 		

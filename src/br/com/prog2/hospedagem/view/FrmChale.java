@@ -190,7 +190,20 @@ public class FrmChale extends JFrame {
 				cha.setCapacidade(Integer.parseInt(txtCapacidade.getText()));
 				cha.setValorAltaEstacao(Double.parseDouble(txtValorAltaEstacao.getText()));
 				cha.setValorBaixaEstacao(Double.parseDouble(txtValorBaixaEstacao.getText()));
-				lblMensagem.setText(controller.inserir(cha));
+				Chale c = new Chale();
+				c.setCodChale(cha.getCodChale());
+				c = controller.pesquisarPorCodigo(c.getCodChale());
+				if(c != null) {
+					txtCodChale.setText(c.getCodChale());
+					txtLocalizacao.setText(c.getLocalizacao());
+					txtCapacidade.setText(Integer.toString(c.getCapacidade()));
+					txtValorAltaEstacao.setText(Double.toString(c.getValorAltaEstacao()));
+					txtValorBaixaEstacao.setText(Double.toString(c.getValorBaixaEstacao()));
+					JOptionPane.showMessageDialog(null, "Chale com este código já existente");
+				}
+				else {
+					lblMensagem.setText(controller.inserir(cha));
+				}
 			}
 		});
 		
