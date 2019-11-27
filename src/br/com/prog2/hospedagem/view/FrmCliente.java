@@ -74,7 +74,7 @@ public class FrmCliente extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 520, 613);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.LIGHT_GRAY);
+		contentPane.setBackground(Color.DARK_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
@@ -298,8 +298,8 @@ public class FrmCliente extends JFrame {
 			}
 		});
 		
-		JButton btnLimpa = new JButton("Limpar");
-		btnLimpa.addMouseListener(new MouseAdapter() {
+		JButton btnPesquisar = new JButton("Pesquisar");
+		btnPesquisar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				txtCodigo.setText("");
@@ -339,7 +339,7 @@ public class FrmCliente extends JFrame {
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(btnListar)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnLimpa)
+					.addComponent(btnPesquisar)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(btnSair)
 					.addContainerGap(230, Short.MAX_VALUE))
@@ -353,7 +353,7 @@ public class FrmCliente extends JFrame {
 						.addComponent(btnAlterar)
 						.addComponent(btnExcluir)
 						.addComponent(btnListar)
-						.addComponent(btnLimpa)
+						.addComponent(btnPesquisar)
 						.addComponent(btnSair))
 					.addContainerGap())
 		);
@@ -379,7 +379,7 @@ public class FrmCliente extends JFrame {
 		
 		lblMensagem = new JLabel("Mensagem:");
 		lblMensagem.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		lblMensagem.setForeground(Color.BLACK);
+		lblMensagem.setForeground(Color.BLUE);
 		
 		txtCodigo = new JTextField();
 		txtCodigo.setColumns(10);

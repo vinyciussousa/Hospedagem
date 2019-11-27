@@ -74,7 +74,7 @@ public class FrmHospedagem extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 750, 550);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.LIGHT_GRAY);
+		contentPane.setBackground(Color.DARK_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
@@ -226,8 +226,8 @@ public class FrmHospedagem extends JFrame {
 			}
 		});
 		
-		JButton btnListar = new JButton("Listar");
-		btnListar.addMouseListener(new MouseAdapter() {
+		JButton btnPesquisar = new JButton("Pesquisar");
+		btnPesquisar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				List<Hospedagem> listaHos = new ArrayList();
@@ -296,7 +296,7 @@ public class FrmHospedagem extends JFrame {
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(btnBuscarCliente)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnListar)
+					.addComponent(btnPesquisar)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(btnLimpar)
 					.addPreferredGap(ComponentPlacement.RELATED)
@@ -313,7 +313,7 @@ public class FrmHospedagem extends JFrame {
 						.addComponent(btnAlterar)
 						.addComponent(btnBuscarChal)
 						.addComponent(btnBuscarCliente)
-						.addComponent(btnListar)
+						.addComponent(btnPesquisar)
 						.addComponent(btnSair)
 						.addComponent(btnLimpar))
 					.addContainerGap())
@@ -416,6 +416,7 @@ public class FrmHospedagem extends JFrame {
 		JLabel lblValorFinal = new JLabel("Valor Final");
 		
 		lblMensagem = new JLabel("Mensagem");
+		lblMensagem.setForeground(Color.BLUE);
 		
 		txtCodHospedagem = new JTextField();
 		txtCodHospedagem.setColumns(10);

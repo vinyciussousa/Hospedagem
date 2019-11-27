@@ -85,7 +85,7 @@ public class FrmChale extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 520, 500);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.LIGHT_GRAY);
+		contentPane.setBackground(Color.DARK_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		
@@ -247,8 +247,8 @@ public class FrmChale extends JFrame {
 			}
 		});
 		
-		JButton btnLimpar = new JButton("Limpar");
-		btnLimpar.addMouseListener(new MouseAdapter() {
+		JButton btnPesquisar = new JButton("Pesquisar");
+		btnPesquisar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				txtCodChale.setText("");
@@ -287,7 +287,7 @@ public class FrmChale extends JFrame {
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(btnListar)
 					.addPreferredGap(ComponentPlacement.RELATED)
-					.addComponent(btnLimpar)
+					.addComponent(btnPesquisar)
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(btnSair)
 					.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -301,7 +301,7 @@ public class FrmChale extends JFrame {
 							.addComponent(btnAlterar)
 							.addComponent(btnExcluir)
 							.addComponent(btnListar)
-							.addComponent(btnLimpar)
+							.addComponent(btnPesquisar)
 							.addComponent(btnSair))
 						.addComponent(btnInserir, Alignment.TRAILING))
 					.addContainerGap())
@@ -334,6 +334,7 @@ public class FrmChale extends JFrame {
 		txtValorBaixaEstacao.setColumns(10);
 		
 		lblMensagem = new JLabel("Mensagem: ");
+		lblMensagem.setForeground(Color.BLUE);
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
