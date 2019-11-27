@@ -1,13 +1,15 @@
 package br.com.prog2.hospedagem.negocio;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class Hospedagem {
 	private String codHospedagem;
 	private String codChale;
+	private String codCliente;
 	private String estado;
-	private Date dataInicio;
-	private Date dataFim;
+	private LocalDate dataInicio;
+	private LocalDate dataFim;
 	private Integer qtdPessoas;
 	private Double desconto;
 	private Double valorFinal;
@@ -20,15 +22,19 @@ public class Hospedagem {
 		return codChale;
 	}
 	
+	public String getCodCliente() {
+		return codCliente;
+	}
+	
 	public String getEstado() {
 		return estado;
 	}
 	
-	public Date getDataInicio() {
+	public LocalDate getDataInicio() {
 		return dataInicio;
 	}
 	
-	public Date getDataFim() {
+	public LocalDate getDataFim() {
 		return dataFim;
 	}
 	
@@ -52,15 +58,19 @@ public class Hospedagem {
 		this.codChale = codChale;
 	}
 	
+	public void setCodCliente(String codCliente) {
+		this.codCliente = codCliente;
+	}
+	
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
 	
-	public void setDataInicio(Date dataInicio) {
+	public void setDataInicio(LocalDate dataInicio) {
 		this.dataInicio = dataInicio;
 	}
 	
-	public void setDataFim(Date dataFim) {
+	public void setDataFim(LocalDate dataFim) {
 		this.dataFim = dataFim;
 	}
 	

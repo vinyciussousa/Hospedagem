@@ -1,6 +1,6 @@
 package br.com.prog2.hospedagem.negocio;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 public class Cliente {
 	private String codCliente;
@@ -11,7 +11,7 @@ public class Cliente {
 	private String cidadeCliente;
 	private String estadoCliente;
 	private String CEPCliente;
-	private Date nascimentoCliente;
+	private LocalDate nascimentoCliente;
 	
 	public String getCodCliente() {
 		return codCliente;
@@ -45,7 +45,7 @@ public class Cliente {
 		return CEPCliente;
 	}
 	
-	public Date getNascimentoCliente() {
+	public LocalDate getNascimentoCliente() {
 		return nascimentoCliente;
 	}
 	
@@ -81,7 +81,7 @@ public class Cliente {
 		this.CEPCliente = CEPCliente;
 	}
 	
-	public void setNascimentoCliente(Date nascimentoCliente) {
+	public void setNascimentoCliente(LocalDate nascimentoCliente) {
 		this.nascimentoCliente = nascimentoCliente;
 	}
 }

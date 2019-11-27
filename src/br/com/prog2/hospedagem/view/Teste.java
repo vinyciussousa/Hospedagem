@@ -8,10 +8,10 @@ import br.com.prog2.hospedagem.negocio.Chale;
 public class Teste {
 	public static void main(String[] args) {
 		
-//		Chale cha = new Chale(); ChaleController controller = new ChaleController();
-//		cha.setCodChale("asdasdas"); cha.setLocalizacao("Casa do Caralho");
-//		cha.setCapacidade(10); cha.setValorAltaEstacao(1000.0);
-//		cha.setValorBaixaEstacao(700.0); System.out.println(controller.inserir(cha));
+		Chale cha = new Chale(); ChaleController controller = new ChaleController();
+		cha.setCodChale("asdasdas"); cha.setLocalizacao("Casa do Caralho");
+		cha.setCapacidade(10); cha.setValorAltaEstacao(1000.0);
+		cha.setValorBaixaEstacao(700.0); System.out.println(controller.inserir(cha));
 		 
 
 		

@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalDate;
 
 import br.com.prog2.hospedagem.negocio.Cliente;
 
@@ -24,7 +25,7 @@ public class ClienteDAOImp implements ClienteDAO {
 			pst.setString(6, cli.getCidadeCliente());
 			pst.setString(7, cli.getEstadoCliente());
 			pst.setString(8, cli.getCEPCliente());
-			pst.setDate(9, cli.getNascimentoCliente());
+			pst.setObject(9, cli.getNascimentoCliente());
 			int res = pst.executeUpdate();
 			if(res > 0){
 				return "Inserido com sucesso.";
@@ -53,7 +54,7 @@ public class ClienteDAOImp implements ClienteDAO {
 		pst.setString(5, cli.getCidadeCliente());
 		pst.setString(6, cli.getEstadoCliente());
 		pst.setString(7, cli.getCEPCliente());
-		pst.setDate(8, cli.getNascimentoCliente());
+		pst.setObject(8, cli.getNascimentoCliente());
 		pst.setString(9, cli.getCodCliente());
 		int res = pst.executeUpdate();
 		if(res > 0){
@@ -105,7 +106,7 @@ public class ClienteDAOImp implements ClienteDAO {
 		cli.setCidadeCliente(rs.getString(6));
 		cli.setEstadoCliente(rs.getString(7));
 		cli.setCEPCliente(rs.getString(8));
-		cli.setNascimentoCliente(rs.getDate(9));
+		cli.setNascimentoCliente(rs.getObject(9, LocalDate.class));
 		lista.add(cli);
 		}
 		return lista;
@@ -136,7 +137,7 @@ public class ClienteDAOImp implements ClienteDAO {
 		cli.setCidadeCliente(rs.getString(6));
 		cli.setEstadoCliente(rs.getString(7));
 		cli.setCEPCliente(rs.getString(8));
-		cli.setNascimentoCliente(rs.getDate(9));
+		cli.setNascimentoCliente(rs.getObject(9, LocalDate.class));
 		return cli;
 		} else {
 		return null;
