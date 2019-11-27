@@ -33,6 +33,7 @@ import java.awt.event.MouseEvent;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class FrmHospedagem extends JFrame {
 
@@ -58,7 +59,7 @@ public class FrmHospedagem extends JFrame {
 			public void run() {
 				try {
 					FrmHospedagem frame = new FrmHospedagem();
-					frame.setTitle("Criação de Hospedagem.");
+					frame.setTitle("Criação de Hospedagem");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -127,7 +128,30 @@ public class FrmHospedagem extends JFrame {
 				hos.setQtdPessoas(Integer.parseInt(txtQtdPessoas.getText()));
 				hos.setDesconto(Double.parseDouble(txtDesconto.getText()));
 				hos.setValorFinal(Double.parseDouble(txtValorFinal.getText()));
-				lblMensagem.setText(controller.inserir(hos));
+				Hospedagem h = new Hospedagem();
+				h.setCodHospedagem(hos.getCodHospedagem());
+				h = controller.pesquisarPorCodHospedagem(h.getCodHospedagem());
+				if(h != null) {
+					txtCodHospedagem.setText(h.getCodHospedagem());
+					txtCodChale.setText(h.getCodChale());
+					txtCodCliente.setText(h.getCodCliente());
+					txtEstado.setText(h.getEstado());
+					LocalDate dataInicio = h.getDataInicio();
+					String dataInicio2;
+					dataInicio2 = Util.formatarDataDeLocalDateParaGui(dataInicio);
+					txtDataInicio.setText(dataInicio2);
+					LocalDate dataFim = h.getDataFim();
+					String dataFim2;
+					dataFim2 = Util.formatarDataDeLocalDateParaGui(dataFim);
+					txtDataFim.setText(dataFim2);
+					txtQtdPessoas.setText(Integer.toString(h.getQtdPessoas()));
+					txtDesconto.setText(Double.toString(h.getDesconto()));
+					txtValorFinal.setText(Double.toString(h.getValorFinal()));
+					JOptionPane.showMessageDialog(null, "Hospedagem com esse código já existe.");
+				}
+				else {
+					lblMensagem.setText(controller.inserir(hos));
+				}
 			}
 		});
 		
@@ -415,7 +439,8 @@ public class FrmHospedagem extends JFrame {
 		
 		JLabel lblValorFinal = new JLabel("Valor Final");
 		
-		lblMensagem = new JLabel("Mensagem");
+		lblMensagem = new JLabel("Mensagem: ");
+		lblMensagem.setFont(new Font("Tahoma", Font.BOLD, 11));
 		
 		txtCodHospedagem = new JTextField();
 		txtCodHospedagem.setColumns(10);

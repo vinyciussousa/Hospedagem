@@ -26,6 +26,7 @@ public class FrmPrincipal extends JFrame {
 			public void run() {
 				try {
 					FrmPrincipal frame = new FrmPrincipal();
+					frame.setTitle("Sistema de Hospedagem");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

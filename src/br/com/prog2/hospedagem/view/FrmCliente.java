@@ -378,7 +378,7 @@ public class FrmCliente extends JFrame {
 		JLabel lblNascimento = new JLabel("Nascimento");
 		
 		lblMensagem = new JLabel("Mensagem:");
-		lblMensagem.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		lblMensagem.setFont(new Font("Tahoma", Font.BOLD, 11));
 		lblMensagem.setForeground(Color.BLACK);
 		
 		txtCodigo = new JTextField();

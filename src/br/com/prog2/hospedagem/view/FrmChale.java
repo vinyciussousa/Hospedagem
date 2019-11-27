@@ -28,6 +28,7 @@ import java.util.List;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.awt.Font;
 
 public class FrmChale extends JFrame {
 
@@ -334,6 +335,7 @@ public class FrmChale extends JFrame {
 		txtValorBaixaEstacao.setColumns(10);
 		
 		lblMensagem = new JLabel("Mensagem: ");
+		lblMensagem.setFont(new Font("Tahoma", Font.BOLD, 11));
 		GroupLayout gl_panel = new GroupLayout(panel);
 		gl_panel.setHorizontalGroup(
 			gl_panel.createParallelGroup(Alignment.LEADING)
