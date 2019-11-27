@@ -13,6 +13,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class FrmPrincipal extends JFrame {
 
@@ -90,6 +92,30 @@ public class FrmPrincipal extends JFrame {
 			}
 		});
 		mnCadastroDeChals.add(mntmCadastrarChale);
+		
+		JMenuItem mntmCadastrarItem = new JMenuItem("Cadastrar Item");
+		mntmCadastrarItem.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				FrmItem fi = new FrmItem();
+				fi.setVisible(true);
+			}
+		});
+		mntmCadastrarItem.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+			}
+		});
+		mnCadastroDeChals.add(mntmCadastrarItem);
+		
+		JMenuItem mntmAdicionarItemAo = new JMenuItem("Adicionar Item ao Chale");
+		mntmAdicionarItemAo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				FrmChaleItem fci = new FrmChaleItem();
+				fci.setVisible(true);
+			}
+		});
+		mnCadastroDeChals.add(mntmAdicionarItemAo);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
