@@ -81,6 +81,15 @@ public class FrmPrincipal extends JFrame {
 		});
 		mnCadastroDeClientes.add(mntmCadastrarCliente);
 		
+		JMenuItem mntmAdicionarTelefone = new JMenuItem("Adicionar Telefone");
+		mntmAdicionarTelefone.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				FrmTelefone ft = new FrmTelefone();
+				ft.setVisible(true);
+			}
+		});
+		mnCadastroDeClientes.add(mntmAdicionarTelefone);
+		
 		JMenu mnCadastroDeChals = new JMenu("Cadastro de Chal\u00E9s");
 		menuBar.add(mnCadastroDeChals);
 		
