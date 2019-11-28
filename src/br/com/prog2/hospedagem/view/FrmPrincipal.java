@@ -67,6 +67,24 @@ public class FrmPrincipal extends JFrame {
 				System.exit(0);
 			}
 		});
+		
+		JMenuItem mntmCriarServio = new JMenuItem("Criar Servi\u00E7o");
+		mntmCriarServio.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				FrmServico fs = new FrmServico();
+				fs.setVisible(true);
+			}
+		});
+		mnHospedagem.add(mntmCriarServio);
+		
+		JMenuItem mntmAdicionarServioA = new JMenuItem("Adicionar Servi\u00E7o a Hospedagem");
+		mntmAdicionarServioA.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				FrmHospedagemServico fhs = new FrmHospedagemServico();
+				fhs.setVisible(true);
+			}
+		});
+		mnHospedagem.add(mntmAdicionarServioA);
 		mnHospedagem.add(mntmSair);
 		
 		JMenu mnCadastroDeClientes = new JMenu("Cadastro de Clientes");
